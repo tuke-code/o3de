@@ -13,6 +13,7 @@
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
 #include <AzFramework/Physics/Configuration/RigidBodyConfiguration.h>
+#include <AzFramework/Translation/TranslationDef.h>
 #include <Common/PhysXSceneQueryHelpers.h>
 #include <PhysX/Utils.h>
 #include <PhysX/NativeTypeIdentifiers.h>
@@ -39,13 +40,13 @@ namespace PhysX
             if (auto editContext = serializeContext->GetEditContext())
             {
                 editContext->Class<CharacterControllerConfiguration>(
-                    "PhysX Character Controller Configuration", "PhysX Character Controller Configuration")
+                    QT_TRANSLATE_NOOP("PhysX", "PhysX Character Controller Configuration"), QT_TRANSLATE_NOOP("PhysX", "PhysX Character Controller Configuration"))
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->DataElement(AZ::Edit::UIHandlers::ComboBox, &CharacterControllerConfiguration::m_slopeBehaviour,
-                        "Slope Behavior", "Behavior of the controller on surfaces that exceed the Maximum Slope Angle.")
+                        QT_TRANSLATE_NOOP("PhysX", "Slope Behavior"), QT_TRANSLATE_NOOP("PhysX", "Behavior of the controller on surfaces that exceed the Maximum Slope Angle."))
                     ->Attribute(AZ::Edit::Attributes::ChangeNotify, AZ::Edit::PropertyRefreshLevels::EntireTree)
-                    ->EnumAttribute(SlopeBehaviour::PreventClimbing, "Prevent Climbing")
-                    ->EnumAttribute(SlopeBehaviour::ForceSliding, "Force Sliding")
+                    ->EnumAttribute(SlopeBehaviour::PreventClimbing, QT_TRANSLATE_NOOP("PhysX", "Prevent Climbing"))
+                    ->EnumAttribute(SlopeBehaviour::ForceSliding, QT_TRANSLATE_NOOP("PhysX", "Force Sliding"))
                     ->DataElement(AZ::Edit::UIHandlers::Default, &CharacterControllerConfiguration::m_contactOffset,
                         "Contact Offset",
                         "Distance from the controller boundary where contact with surfaces can be resolved. Default value is 0.1, but a common value is around 10% of the radius.\n"
