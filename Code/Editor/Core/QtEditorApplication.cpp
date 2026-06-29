@@ -17,7 +17,6 @@
 #include <QScopedValueRollback>
 #include <QToolBar>
 #include <QLoggingCategory>
-#include <QTextCodec>
 #include <QLocale>
 
 
