@@ -59,9 +59,14 @@ namespace AzPhysics
                     ->Attribute(AZ::Edit::Attributes::Visibility, &SceneConfiguration::GetCcdVisibility)
                     ->EndGroup()
 
-                    ->DataElement(AZ::Edit::UIHandlers::Default, &SceneConfiguration::m_enablePcm, "Persistent Contact Manifold", "Enabled the persistent contact manifold narrow-phase algorithm")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default,
+                        &SceneConfiguration::m_enablePcm,
+                        QT_TRANSLATE_NOOP("PhysX", "Persistent Contact Manifold"),
+                        QT_TRANSLATE_NOOP("PhysX", "Enabled the persistent contact manifold narrow-phase algorithm"))
                     ->DataElement(AZ::Edit::UIHandlers::Default,&SceneConfiguration::m_enableEnhancedDeterminism,
-                        "Enhanced Determinism", "Improves determinism at a performance cost. Applied at scene creation.")
+                        QT_TRANSLATE_NOOP("PhysX", "Enhanced Determinism"),
+                        QT_TRANSLATE_NOOP("PhysX", "Improves determinism at a performance cost. Applied at scene creation."))
                     ->DataElement(AZ::Edit::UIHandlers::Default, &SceneConfiguration::m_bounceThresholdVelocity,
                         QT_TRANSLATE_NOOP("PhysX", "Bounce Threshold Velocity"), QT_TRANSLATE_NOOP("PhysX", "Relative velocity below which colliding objects will not bounce"))
                     ->Attribute(AZ::Edit::Attributes::Min, 0.01f)

@@ -476,8 +476,8 @@ namespace LUAEditor
                 QMessageBox msgBox(this->m_pLUAEditorMainWindow);
                 msgBox.setText(QCoreApplication::translate("LUAEditorContext", "A file has been modified by an outside program. Would you like to reload it from disk? If you do, you will lose any unsaved changes."));
                 msgBox.setInformativeText(info.m_assetName.c_str());
-                msgBox.addButton("Reload From Disk", QMessageBox::ButtonRole::AcceptRole);
-                QPushButton* button = msgBox.addButton("Don't reload", QMessageBox::ButtonRole::RejectRole);
+                msgBox.addButton(QCoreApplication::translate("LUAEditorContext", "Reload From Disk"), QMessageBox::ButtonRole::AcceptRole);
+                QPushButton* button = msgBox.addButton(QCoreApplication::translate("LUAEditorContext", "Don't reload"), QMessageBox::ButtonRole::RejectRole);
                 msgBox.setDefaultButton(button);
                 msgBox.setIcon(QMessageBox::Question);
                 shouldReload = (msgBox.exec() == QMessageBox::ButtonRole::AcceptRole);

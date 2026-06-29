@@ -272,7 +272,7 @@ class DoubleList(QtCore.QObject):
     def eventFilter(self, source, event):
         if event.type() == QtCore.QEvent.ContextMenu and source is self.right.viewport():
             menu = QMenu()
-            menu.addAction("Customize generated values")
+            menu.addAction(QObject::tr("Customize generated values"))
             if menu.exec_(event.globalPosition()):
                 self.restrictValueSpace()
                 return True

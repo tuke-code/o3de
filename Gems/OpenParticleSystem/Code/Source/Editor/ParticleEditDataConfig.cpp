@@ -937,8 +937,10 @@ namespace OpenParticle
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true)
                     ->Attribute(AZ::Edit::Attributes::Visibility, AZ::Edit::PropertyVisibility::Show)
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default, &OpenParticle::SpawnVelConcentrate::centre, "Center",
-                        "The center of the Concentrate.")
+                        AZ::Edit::UIHandlers::Default,
+                        &OpenParticle::SpawnVelConcentrate::centre,
+                        QT_TRANSLATE_NOOP("OpenParticleSystem", "Center"),
+                        QT_TRANSLATE_NOOP("OpenParticleSystem", "The center of the Concentrate."))
                     ->DataElement(
                         AZ_CRC("DistCtrlHandler"), &OpenParticle::SpawnVelConcentrate::rateObject, QT_TRANSLATE_NOOP("OpenParticleSystem", "Rate"),
                         QT_TRANSLATE_NOOP("OpenParticleSystem", "The rate of Concentrate."))
@@ -1450,8 +1452,9 @@ namespace OpenParticle
                         QT_TRANSLATE_NOOP("OpenParticleSystem", "Inherit parent particle's size."))
                         ->Attribute(AZ::Edit::Attributes::Visibility, &RibbonConfig::ModeChangToTrail)
                     ->DataElement(AZ::Edit::UIHandlers::Default, &OpenParticle::RibbonConfig::tesselationFactor,
-                        "Tesselation Factor",
-                        "Each time a ribbon segment grows longer than this value, it will be subdivided.  Lower values result in more (smoother) subdivisions, more resource use.")
+                        QT_TRANSLATE_NOOP("OpenParticleSystem", "Tesselation Factor"),
+                        QT_TRANSLATE_NOOP("OpenParticleSystem", "Each time a ribbon segment grows longer than this value, it will be subdivided.  Lower values "
+                                          "result in more (smoother) subdivisions, more resource use."))
                         ->Attribute(AZ::Edit::Attributes::Min, 1.f - SimuCore::ALMOST_ONE) 
                     ->DataElement(AZ::Edit::UIHandlers::Default, &OpenParticle::RibbonConfig::curveTension,
                         QT_TRANSLATE_NOOP("OpenParticleSystem", "Curve Tension"),
